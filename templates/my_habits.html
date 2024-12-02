@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="кг">
 
 <head>
     <meta charset="UTF-8">
@@ -12,8 +12,8 @@
     <div class="container">
         <h1 class="mt-4">Habits Tracker</h1>
         <form method="POST" action="/add_habit" class="mb-4">
-            <input type="text" name="habit_name" class="form-control" placeholder="Enter new habit" required>
-            <button type="submit" class="btn btn-primary mt-2">Add Habit</button>
+            <input type="text" name="habit_name" class="form-control" placeholder="Введите новую привычку" required>
+            <button type="submit" class="btn btn-primary mt-2">Добавить</button>
         </form>
 
         <ul class="list-group">
@@ -21,15 +21,15 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 {{ habit.name }} - Progress: {{ habit.progress }}
                 <form method="POST" action="/update_habit/{{ habit.id }}" class="ml-2">
-                    <button type="submit" class="btn btn-success btn-sm">Completed</button>
+                    <button type="submit" class="btn btn-success btn-sm">Выполнено</button>
                 </form>
                 <form method="POST" action="/delete_habit/{{ habit.id }}" class="ml-2">
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
                 </form>
             </li>
             {% endfor %}
         </ul>
-        <a href="/" class="btn btn-secondary mt-4">Back to To-Do List</a>
+        <a href="/" class="btn btn-secondary mt-4">Вернуться в To-Do List</a>
     </div>
 </body>
 

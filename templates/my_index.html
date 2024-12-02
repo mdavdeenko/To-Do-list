@@ -1,34 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
     <title>To-Do List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E494EB;
+            color: rgb(24, 21, 21);
+            margin: 0;
+            padding: 280px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 60px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #eb5676;
+            border-radius: 35px;
+            box-shadow: 0 20px 10px rgba(12, 10, 10, 0.1);
+            padding: 100px;
+        }
+
+        input[type="text"] {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #6cadf0;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 555px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a99db;
+        }
+
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px;
+            border-bottom: 1px solid #110e0e;
+        }
+
+        .text-success {
+            text-decoration: line-through;
+        }
+
+        .todo-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease 0s, transform 0.3s ease 0s;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: #4383d6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #5a99db;
+            transform: scale3d(1.05, 1.05, 1);
+        }
+
+        .btn-secondary {
+            background-color: #4383d6;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #F24130;
+            transform: scale3d(1.05, 1.05, 1);
+        }
+
+        .btn-danger,
+        .btn-warning {
+            border-radius: 20px;
+            padding: 5px 50px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: background-color 0.3s ease 0s, transform 0.3s ease 0s;
+            margin-left: 150px;
+            color: #fff;
+        }
+
+        .btn-danger {
+            background-color: #e70202;
+            text-decoration: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #F24130;
+            transform: scale3d(1.05, 1.05, 1);
+        }
+
+        .btn-warning {
+            background-color: #41a541;
+            text-decoration: none;
+        }
+
+        .btn-warning:hover {
+            background-color: #357c3b;
+            transform: scale3d(1.05, 1.05, 1);
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h1 class="mt-4">To-Do List</h1>
         <form method="POST" action="/add" class="mb-4">
-            <input type="text" name="content" class="form-control" placeholder="Enter your task" required>
-            <button type="submit" class="btn btn-primary mt-2">Add Task</button>
+            <input type="text" name="content" class="form-control" placeholder="Введите вашу задачу" required>
+            <button type="submit" class="btn btn-primary mt-2">Создать задачу</button>
         </form>
         <ul class="list-group">
             {% for task in tasks %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <span class="{% if task.completed %}text-success{% endif %}">{{ task.content }}</span>
                 <div>
-                    <a href="/complete/{{ task.id }}" class="btn btn-warning btn-sm">{% if task.completed %}Undo{% else
-                        %}Complete{% endif %}</a>
-                    <a href="/delete/{{ task.id }}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="/complete/{{ task.id }}" class="btn btn-warning btn-sm">{% if task.completed %}Не сделано{%
+                        else
+                        %}Выполнено{% endif %}</a>
+                    <a href="/delete/{{ task.id }}" class="btn btn-danger btn-sm">Удалить</a>
                 </div>
             </li>
             {% endfor %}
         </ul>
-        <a href="/logout" class="btn btn-secondary mt-4">Logout</a>
+        <a href="/logout" class="btn btn-secondary mt-4">Выйти из системы</a>
     </div>
 </body>
 

@@ -1,123 +1,56 @@
 /* styles.css */
-
-/* Основные стили для body */
 body {
-    background-color: #f4f7fa;
-    /* Светлый фон */
     font-family: 'Arial', sans-serif;
-    /* Шрифт */
+    background-color: #ed4845;
+    color: #333;
+    margin: 0;
+    padding: 20px;
 }
 
-/* Стили заголовка */
 h1 {
-    color: #343a40;
-    /* Темный цвет текста */
     text-align: center;
-    /* Центрирование */
-    margin-bottom: 20px;
-    /* Отступ снизу */
+    color: #ed9898;
 }
 
-/* Стили формы */
-form {
-    display: flex;
-    /* Использование flexbox */
-    justify-content: center;
-    /* Центрировка по горизонтали */
-}
-
-/* Стили для input */
-input[type="text"] {
-    border-radius: 25px;
-    /* Закругленные углы */
-    border: 1px solid #ced4da;
-    /* Цвет рамки */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Тень */
-}
-
-/* Стили для кнопок */
-.btn-primary {
-    background-color: #5a67d8;
-    /* Цвет кнопки "Добавить" */
-    border-color: #5a67d8;
-    /* Цвет рамки кнопки */
-}
-
-.btn-primary:hover {
-    background-color: #434190;
-    /* Цвет при наведении */
-}
-
-/* Стили для списка задач */
-.list-group {
-    margin-top: 20px;
-    /* Отступ сверху */
-}
-
-.list-group-item {
-    border: 1px solid #e2e8f0;
-    /* Светлая рамка */
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
     border-radius: 8px;
-    /* Закругленные углы */
-    margin: 5px 0;
-    /* Отступ между элементами */
-    background-color: #ffffff;
-    /* Белый фон */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Тень */
-    transition: all 0.3s ease;
-    /* Плавный переход */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-/* Эффект при наведении на элемент списка */
-.list-group-item:hover {
-    transform: scale(1.02);
-    /* Увеличение размера */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Увеличенная тень */
-}
-
-/* Стили для текстовых состояний */
-.text-success {
-    text-decoration: line-through;
-    /* Зачеркивание для выполненных задач */
-}
-
-/* Стили для кнопок внутри списка */
-.btn {
-    margin-left: 5px;
-    /* Отступ слева */
-}
-
-.btn-warning {
-    background-color: #f6ad55;
-    /* Цвет кнопки "Undo/Complete" */
-    border-color: #f6ad55;
-    /* Цвет рамки кнопки */
-}
-
-.btn-warning:hover {
-    background-color: #d69e2e;
-    /* Цвет при наведении */
-}
-
-.btn-danger {
-    background-color: #e53e3e;
-    /* Красный цвет для кнопки "Удалить" */
-    border-color: #e53e3e;
-    /* Цвет рамки кнопки */
-}
-
-.btn-danger:hover {
-    background-color: #c53030;
-    /* Цвет при наведении */
-}
-
-/* Стили для кнопки выхода */
-.btn-secondary {
+input[type="text"] {
     width: 100%;
-    /* Ширина кнопки выхода */
-    margin-top: 20px;
-    /* Отступ сверху */
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #6cadf0;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5a99db;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
 }
