@@ -25,4 +25,5 @@
 
 ## Использование
 
-Перейдите по адресу
+Перейдите по адресу https://github.com/mdavdeenko/To-Do-list.git
+ 
